@@ -8,7 +8,7 @@ require "Database.php";
 $config = require "config.php";
 
 
-$db = new Database( $config );
+$db = new Database( $config['database'] );
 
 $users = $db->query( "SELECT * FROM users" )->fetchAll(PDO::FETCH_ASSOC);
 
