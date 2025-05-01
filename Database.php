@@ -23,11 +23,14 @@ dd($person ->breathe());
 class Database {
     public $connection;
 
-    public function __construct() {
-        // Connect to the database here if needed
-        $dsn = "mysql:host=localhost;port=3306;dbname=myfirstdb;charset=utf8mb4;user=root;password=";
+    public function __construct( $config) {
 
-        $this->connection = new PDO($dsn);
+        $dsn = "mysql:".http_build_query($config,'',';'); // Convert the array to a query string
+        // Connect to the database here if needed
+
+        $this->connection = new PDO($dsn, "root", "", [
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        ]);
     }
     public function query( $query ) {
 
