@@ -12,9 +12,9 @@ $db = new Database( $config['database'] );
 
 $id = $_GET['id'];
 
-$query = "SELECT * FROM users WHERE id = ?";
+$query = "SELECT * FROM users WHERE id = :id";
 
-$users = $db->query($query, [$id])->fetchAll(PDO::FETCH_ASSOC);
+$users = $db->query($query, [ ':id' => $id])->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($users as $user) {
     echo "<li>" . $user['username'] . "</li>";
