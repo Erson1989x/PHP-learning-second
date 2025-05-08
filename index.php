@@ -10,11 +10,14 @@ $config = require "config.php";
 
 $db = new Database( $config['database'] );
 
-$users = $db->query( "SELECT * FROM users" )->fetchAll(PDO::FETCH_ASSOC);
+$id = $_GET['id'];
 
+$query = "SELECT * FROM users WHERE id = ?";
+
+$users = $db->query($query, [$id])->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($users as $user) {
     echo "<li>" . $user['username'] . "</li>";
 }
 
-dd($users[0]['username']);
+dd($users);
