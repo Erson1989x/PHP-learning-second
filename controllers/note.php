@@ -15,8 +15,10 @@ $note =  $db->query("SELECT * FROM notes where id = :id", [
         abourt();
     }
 
-    if(! $note['user_id'] !== 1) {
-        abourt(403);
+    $currentUserId = 1; // Replace with the actual current user ID from your authentication system
+
+    if(! $note['user_id'] !== $currentUserId) {
+        abourt(Response::FORBIDDEN);
     }
 
 
