@@ -6,7 +6,7 @@ $db = new Database($config['database']);
 
 $heading = "My Notes";
 
-$notes =  $db->query("SELECT * FROM notes")->fetchAll(PDO::FETCH_ASSOC);
+$notes =  $db->query("SELECT * FROM notes where id = 1")->fetchAll(PDO::FETCH_ASSOC);
 
 
 
