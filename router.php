@@ -19,7 +19,7 @@ $routes = [
     "/note" => "controllers/note.php",
 ];
 
-function abourt($code = 404) {
+function abort($code = 404) {
     http_response_code($code);
     require "views/{$code}.php";
     die();
@@ -29,7 +29,7 @@ function routeTo($URL, $routes) {
     if(array_key_exists($URL, $routes)) {
         require $routes[$URL];
     } else {
-        abourt();
+        abort();
     };
 }
 

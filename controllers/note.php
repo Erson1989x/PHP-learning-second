@@ -10,14 +10,9 @@ $currentUserId = 1; // Replace with the actual current user ID from your authent
 
 $note =  $db->query("SELECT * FROM notes where id = :id", [
     'id' => $_GET['id']
-    ])->fetch(PDO::FETCH_ASSOC);
+    ])->findOrFail();
 
-
-    if(!$note) {
-        abourt();
-    }    if($note['user_id'] !== $currentUserId) {
-        abourt(Response::FORBIDDEN);
-    }
+authorize($note['user_id'] === $currentUserId);
 
 
 
