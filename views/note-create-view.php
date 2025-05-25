@@ -23,9 +23,8 @@
                         name="body"
                         id="body"
                         rows="8"
-                        required
                         class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ease-in-out resize-none shadow-sm"
-                        placeholder="Write your thoughts, ideas, or anything you'd like to remember..."><?= isset($note['body']) ? $note['body'] : ''; ?></textarea>
+                        placeholder="Write your thoughts, ideas, or anything you'd like to remember..."><?= $_POST['body']?? ''; ?></textarea>
                         <?php if (isset($error['body'])): ?>
                             <p class="text-red-500 text-sm mt-2"><?= $error['body']; ?></p>
                         <?php endif; ?>
