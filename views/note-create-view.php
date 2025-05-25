@@ -15,19 +15,19 @@
                     </a>
                 </div>
             </div>
-            
-            <form  method="POST" class="p-6">
+
+            <form method="POST" class="p-6">
                 <div class="mb-6">
                     <label for="body" class="block text-sm font-semibold text-gray-700 mb-2">Your Note</label>
-                    <textarea 
-                        name="body" 
-                        id="body" 
+                    <textarea
+                        name="body"
+                        id="body"
                         rows="8"
+                        required
                         class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ease-in-out resize-none shadow-sm"
-                        placeholder="Write your thoughts, ideas, or anything you'd like to remember..."
-                    ></textarea>
+                        placeholder="Write your thoughts, ideas, or anything you'd like to remember..."></textarea>
                 </div>
-                
+
                 <div class="flex items-center justify-end">
                     <button type="submit" class="inline-flex items-center px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-200 focus:ring-4 focus:ring-blue-300">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
